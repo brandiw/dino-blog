@@ -1,24 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Dino Blog!</h1>
       </header>
+      <main>
+        <div className="blogpost">
+          <h2>{props.post.title}</h2>
+          <h3>By {props.post.author}</h3>
+          <p>{props.post.body}</p>
+        </div>
+        <hr />
+        <div>
+          <h2>Comments</h2>
+          <div className="comment">
+            {props.post.comments[0]}
+          </div>
+          <div className="comment">
+            {props.post.comments[1]}
+          </div>
+          <div className="comment">
+            {props.post.comments[2]}
+          </div>
+          <div className="comment">
+            {props.post.comments[3]}
+          </div>
+        </div>
+      </main>
     </div>
   );
 }
